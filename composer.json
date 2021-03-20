@@ -1,0 +1,38 @@
+{
+  "name": "firstandthird/dandy-blocks",
+  "description": "A collection of Gutenberg blocks built on top of ACF.",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "autoload": {
+    "files": [
+      "inc/admin.php"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/firstandthird/dandy"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.9.3",
+        "type": "wordpress-muplugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}"
+        }
+      }
+    }
+  ],
+  "require": {
+    "firstandthird/ftdandy": "dev-main"
+  },
+  "require-dev": {
+    "automattic/vipwpcs": "^2.2.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*",
+    "ffraenz/private-composer-installer": "^5.0"
+  }
+}

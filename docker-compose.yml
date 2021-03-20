@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  dandy-blocks:
+    image: 'wordpress:5.7'
+    depends_on:
+      - mysql
+    ports:
+      - '80:80'
+    volumes:
+      - '.:/var/www/html/wp-content/plugins/dandy-blocks'
+      - './vendor/advanced-custom-fields/advanced-custom-fields-pro:/var/www/html/wp-content/plugins/advanced-custom-fields-pro'
+      - ./acf-fields:/var/www/html/wp-content/themes/twentytwentyone/acf-json
+    environment:
+      WORDPRESS_DEBUG: '1'
+      WORDPRESS_DB_HOST: 'mysql'
+      WORDPRESS_DB_USER: '${DB_USER}'
+      WORDPRESS_DB_PASSWORD: '${DB_PASSWORD}'
+      WORDPRESS_DB_NAME: '${DB_NAME}'
+      WORDPRESS_TABLE_PREFIX: '${TABLE_PREFIX}'
+  mysql:
+    image: 'mariadb:10'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_NAME}'
