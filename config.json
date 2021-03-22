@@ -1,0 +1,29 @@
+{
+  "blocks": {
+    "header": {
+      "title": "Header",
+      "description": "A configurable header block",
+      "keywords": [
+        "heading",
+        "headline",
+        "title",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ],
+      "icon": "<svg height='100' width='100' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M50 50h-2V14h2a2 2 0 000-4h-8a2 2 0 000 4h2v16H20V14h2a2 2 0 000-4h-8a2 2 0 000 4h2v36h-2a2 2 0 000 4h8a2 2 0 000-4h-2V34h24v16h-2a2 2 0 000 4h8a2 2 0 000-4z'/></svg>",
+      "example": {
+        "attributes": {
+          "mode": "preview",
+          "data": {
+            "text": "Heading Text",
+            "subtitle": "Cool subtitle"
+          }
+        }
+      }
+    }
+  }
+}
