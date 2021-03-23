@@ -127,7 +127,7 @@ class Dandy_Blocks {
           ], $block['supports'] ?? []),
           'example' => $block['example'] ?? [],
           'category' => $block['category'] ?? self::$theme_category,
-          'render_template' => self::$theme_path . 'blocks/' . $block_name . '/block.php'
+          'render_template' => self::$theme_path . '/blocks/' . $block_name . '/block.php'
         ]);
       }
     }
