@@ -34,3 +34,7 @@ Templates should use default clientkit classnames when possible and included sty
 No styles or javascript are loaded by default. It is up to the theme to import the styles and javascript. If you add styles or js to a block, make sure it gets imported to the root `styles.css` or `scripts.js`
 
 Block styles should be prefixed with `dandy-block__` to make sure there's no conflicts with existing blocks WordPress might have or other plugins register.
+
+### Theme Specific Blocks
+
+Same format only you put a blocks.json in the theme root and follow the above.
