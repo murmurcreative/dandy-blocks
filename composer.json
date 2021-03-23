@@ -3,11 +3,6 @@
   "description": "A collection of Gutenberg blocks built on top of ACF.",
   "type": "wordpress-plugin",
   "license": "MIT",
-  "autoload": {
-    "files": [
-      "inc/admin.php"
-    ]
-  },
   "repositories": [
     {
       "type": "vcs",
