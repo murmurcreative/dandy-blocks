@@ -29,8 +29,8 @@ class Dandy_Blocks {
 
     self::$options = json_decode($config, true);
 
-    if (file_exists(self::$theme_path . 'blocks.json')) {
-      $theme_config = file_get_contents(self::$theme_path . 'blocks.json');
+    if (file_exists(self::$theme_path . '/blocks.json')) {
+      $theme_config = file_get_contents(self::$theme_path . '/blocks.json');
 
       self::$theme_options = json_decode($theme_config, true);
     }
@@ -109,24 +109,27 @@ class Dandy_Blocks {
     }
 
     // load theme blocks
-    foreach (self::$theme_options['blocks'] as $block_name => $block) {
-      acf_register_block_type([
-        'name' => $block_name,
-        'title' => $block['title'],
-        'description' => $block['description'] ?? '',
-        'icon' => $block['icon'] ?? 'dashicons-editor-help',
-        'keywords' => is_array($block['keywords']) ? array_merge(['dandy'], $block['keywords']) : ['dandy'],
-        'supports' => array_merge([
-          'align' => false,
-          'align_text' => false,
-          'align_content' => false,
-          'mode' => true,
-          'multiple' => true
-        ], $block['supports'] ?? []),
-        'example' => $block['example'] ?? [],
-        'category' => $block['category'] ?? self::$category,
-        'render_template' => self::$theme_path . 'blocks/' . $block_name . '/block.php'
-      ]);
+    if (!empty(self::$theme_options['blocks'])) {
+
+      foreach (self::$theme_options['blocks'] as $block_name => $block) {
+        acf_register_block_type([
+          'name' => $block_name,
+          'title' => $block['title'],
+          'description' => $block['description'] ?? '',
+          'icon' => $block['icon'] ?? 'dashicons-editor-help',
+          'keywords' => is_array($block['keywords']) ? array_merge(['dandy'], $block['keywords']) : ['dandy'],
+          'supports' => array_merge([
+            'align' => false,
+            'align_text' => false,
+            'align_content' => false,
+            'mode' => true,
+            'multiple' => true
+          ], $block['supports'] ?? []),
+          'example' => $block['example'] ?? [],
+          'category' => $block['category'] ?? self::$theme_category,
+          'render_template' => self::$theme_path . 'blocks/' . $block_name . '/block.php'
+        ]);
+      }
     }
   }
 }
