@@ -29,7 +29,7 @@ class Dandy_Blocks {
 
     self::$options = json_decode($config, true);
 
-    if (file_exists(self::$plugin_path . 'blocks.json')) {
+    if (file_exists(self::$theme_path . 'blocks.json')) {
       $theme_config = file_get_contents(self::$theme_path . 'blocks.json');
 
       self::$theme_options = json_decode($theme_config, true);
