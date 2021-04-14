@@ -99,6 +99,7 @@ class Dandy_Blocks {
           'align' => false,
           'align_text' => false,
           'align_content' => false,
+          'anchor' => true,
           'mode' => true,
           'multiple' => true
         ], $block['supports'] ?? []),
