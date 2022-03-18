@@ -10,9 +10,9 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'dandy-header-' . $block['id'];
+$block_id = 'dandy-header-' . $block['id'];
 if (!empty($block['anchor'])) {
-  $id = $block['anchor'];
+  $block_id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className"
@@ -27,7 +27,7 @@ $heading_level = get_field('heading_level') ?: 'h2';
 $header_link = get_field('header_link') ?: null;
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name); ?>">
+<section id="<?= esc_attr($block_id); ?>" class="<?= esc_attr($class_name); ?>">
   <?php if (!empty($header_link)): ?>
   <a href="<?= esc_url($header_link); ?>">
   <?php endif; ?>
