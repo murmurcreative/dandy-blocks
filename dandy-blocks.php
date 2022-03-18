@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Dandy Plugins
  * Description: A collection of Gutenberg blocks built on top of ACF.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: First+Third
  * Author URI: https://firstandthird.com
- * Requires at least: 5.6.0
+ * Requires at least: 5.9.0
  * Requires PHP: 7
  */
 
@@ -36,7 +36,7 @@ class Dandy_Blocks {
     }
 
     add_filter('acf/settings/load_json', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_acf_fields_path']);
-    add_filter('block_categories', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_block_category'], 10, 2 );
+    add_filter('block_categories_all', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_block_category'], 10, 2 );
     add_action('init', ['FirstAndThird\Dandy\Dandy_Blocks', 'register_blocks']);
   }
 
@@ -45,13 +45,14 @@ class Dandy_Blocks {
       return;
     }
 
+    //phpcs:disable WordPress.PHP.DevelopmentFunctions.error_log_print_r,WordPress.PHP.DevelopmentFunctions.error_log_error_log --  This is only run in development
     if (is_array($message) || is_object($message)) {
-      //phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_print_r
       error_log(print_r($message, true));
       return;
     }
 
     error_log($message);
+    //phpcs:enable
   }
 
   static function register_acf_fields_path($paths) {

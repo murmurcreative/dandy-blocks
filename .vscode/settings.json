@@ -1,0 +1,5 @@
+{
+  "phpcs.executablePath": "./vendor/bin/phpcs",
+  "phpcs.showSources": true,
+  "phpcs.trace.server": "messages"
+}
