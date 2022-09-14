@@ -36,7 +36,7 @@
     }
   ],
   "require": {
-    "firstandthird/ftdandy": "dev-main"
+    "murmurcreative/ftdandy": "dev-main"
   },
   "require-dev": {
     "automattic/vipwpcs": "^2.3.3",
