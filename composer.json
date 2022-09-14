@@ -1,5 +1,5 @@
 {
-  "name": "firstandthird/dandy-blocks",
+  "name": "murmurcreative/dandy-blocks",
   "description": "A collection of Gutenberg blocks built on top of ACF.",
   "type": "wordpress-plugin",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/firstandthird/dandy"
+      "url": "https://github.com/murmurcreative/dandy"
     },
     {
       "type": "package",
